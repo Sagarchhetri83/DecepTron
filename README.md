@@ -1,96 +1,102 @@
-DecepTron 🍯 - An AI-Powered Deception Honeypot
-DecepTron is an intelligent cybersecurity honeypot system that leverages a local Large Language Model (LLM) to simulate vulnerable network services. It is designed to attract, deceive, and analyze attackers in real-time to gather valuable threat intelligence.
+🍯 DecepTron – AI-Powered Deception Honeypot
 
-This project was developed as a hands-on exploration of offensive AI, network programming, and cybersecurity principles.
+
+DecepTron is an intelligent AI-powered cybersecurity honeypot that uses a local Large Language Model (LLM) to simulate vulnerable network services. It is designed to attract, deceive, and analyze attackers in real time, providing valuable threat intelligence while running fully offline for maximum privacy.
+
 
 🚀 Features
-Intelligent Attacker Interaction: Uses a local Llama 3 model to generate realistic and interactive terminal and FTP responses.
 
-Multi-Service Deception: Simulates both a terminal (SSH-style on port 2222) and an FTP server (on port 21) to create a convincing decoy network.
+AI-Powered Interaction → Uses a local Llama-3 model to generate realistic attacker responses.
 
-Real-Time Logging: Records every attacker command and AI response to an SQLite database for analysis.
+Multi-Service Deception → Simulates an SSH-style terminal (port 2222).
 
-Live Analytics Dashboard: A web-based dashboard built with Streamlit to monitor all honeypot activity in real-time.
+Real-Time Logging → Captures attacker commands + AI responses into an SQLite database.
 
-Fully Local & Private: Runs completely offline with no paid APIs, ensuring all data and interactions remain on your machine.
+Live Analytics Dashboard → Streamlit web UI for real-time monitoring.
+
+Fully Local & Private → Runs without any external APIs or cloud services.
+
 
 🛠️ Tech Stack
-Backend: Python 3, Sockets, Threading
 
-AI Engine: llama-cpp-python with the Llama 3 8B GGUF model
+Backend → Python 3, Sockets, Threading
 
-Database: SQLite
+AI Engine → llama-cpp-python
+ with Llama 3 8B GGUF
 
-Dashboard: Streamlit & Pandas
+Database → SQLite
 
-Attacker Client: PuTTY (for terminal) & FileZilla (for FTP)
+Dashboard → Streamlit + Pandas
+
+Attacker Clients → PuTTY (SSH/terminal)
+
+
 
 📦 Installation
-Clone the repository:
-
-git clone [https://github.com/Sagarchhetri83/DecepTron-AI-Honeypot.git](https://github.com/Sagarchhetri83/DecepTron-AI-Honeypot.git)
+1️⃣ Clone the repository
+git clone https://github.com/Sagarchhetri83/DecepTron-AI-Honeypot.git
 cd DecepTron-AI-Honeypot
 
+2️⃣ Create & activate virtual environment
+# Create venv
+python -m venv .venv  
 
-Create and activate a virtual environment:
-
-# Create the venv
-python -m venv .venv
 # Activate on Windows
 .\.venv\Scripts\activate
 
-
-Install dependencies:
-(Note: llama-cpp-python may require C++ build tools to be installed on your system.)
-
+3️⃣ Install dependencies
 pip install -r requirements.txt
 
+4️⃣ Download the AI Model
 
-Download the AI Model:
-Download the Meta-Llama-3-8B-Instruct.Q4_K_M.gguf model and place it in the /models directory. Ensure the MODEL_PATH variable in backend/offensive_ai.py points to this file.
+Download Meta-Llama-3-8B-Instruct.Q4_K_M.gguf and place it in the /models directory.
+Update the MODEL_PATH variable in backend/offensive_ai.py to point to this file.
 
 ▶️ Usage
-The system requires multiple separate terminals to run.
 
-Run the Dashboard (Terminal 1):
+Run the system in multiple terminals:
+
+Terminal 1 – Dashboard
 
 streamlit run dashboard.py
 
 
-Run the Main Honeypot (Terminal 2):
+Terminal 2 – Main Honeypot
 
 python -m backend.app
 
 
-(Optional) Run the FTP Honeypot (Terminal 3):
+Terminal 3 – FTP Honeypot (optional)
 
 python -m backend.ftp_honeypot
 
 
-Connect to the honeypots using a client like PuTTY (for the main honeypot) or FileZilla (for the FTP honeypot) and observe the interactions on the dashboard.
+🔗 Connect with:
+
+PuTTY → SSH honeypot on port 2222
+
+All activity is logged into SQLite and visualized on the dashboard.
 
 📂 Project Structure
 DecepTron/
 │
-├── backend/                # Core application logic
-│   ├── __init__.py
-│   ├── app.py              # Main terminal honeypot runner
-│   ├── offensive_ai.py     # Handles LLM interaction
-│   ├── logger.py           # Database logging functions
-│   ├── defensive.py        # Threat detection logic
-│   └── ftp_honeypot.py     # (Optional) FTP honeypot runner
+├── backend/                # Core honeypot logic
+│   ├── app.py              # Main terminal honeypot
+│   ├── offensive_ai.py     # LLM interaction engine
+│   ├── logger.py           # Logging functions
+│   ├── defensive.py        # Threat detection
+│   └── ftp_honeypot.py     # FTP honeypot
 │
-├── data/                   # To store the SQLite database (ignored by git)
-│
-├── models/                 # To store large LLM files (ignored by git)
-│
-├── .gitignore              # Specifies files for git to ignore
-├── dashboard.py            # The Streamlit dashboard application
-├── requirements.txt        # Project dependencies for pip
-└── README.md               # Project documentation
+├── data/                   # SQLite DB (ignored by git)
+├── models/                 # LLM files (ignored by git)
+├── dashboard.py            # Streamlit dashboard
+├── requirements.txt        # Dependencies
+└── README.md               # Documentation
 
-Credits
-This project was created and developed by Sagar Chhetri.
+👨‍💻 Credits
+
+Developed by Sagar Chhetri 
+A hands-on project exploring offensive AI, deception, and cybersecurity research.
 
 🤝 Contributing
 
