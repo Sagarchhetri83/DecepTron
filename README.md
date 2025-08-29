@@ -23,7 +23,7 @@ Database: SQLite
 
 Dashboard: Streamlit & Pandas
 
-Attacker Client: PuTTY (for terminal)
+Attacker Client: PuTTY (for terminal) & FileZilla (for FTP)
 
 📦 Installation
 Clone the repository:
@@ -62,12 +62,12 @@ Run the Main Honeypot (Terminal 2):
 python -m backend.app
 
 
-Run the FTP Honeypot (Terminal 3):
+(Optional) Run the FTP Honeypot (Terminal 3):
 
 python -m backend.ftp_honeypot
 
 
-Connect to the honeypots using a client like PuTTY (for the main honeypot).
+Connect to the honeypots using a client like PuTTY (for the main honeypot) or FileZilla (for the FTP honeypot) and observe the interactions on the dashboard.
 
 📂 Project Structure
 DecepTron/
@@ -80,15 +80,17 @@ DecepTron/
 │   ├── defensive.py        # Threat detection logic
 │   └── ftp_honeypot.py     # (Optional) FTP honeypot runner
 │
-├── data/                   # To store the SQLite database 
+├── data/                   # To store the SQLite database (ignored by git)
 │
-├── models/                 # To store large LLM files 
+├── models/                 # To store large LLM files (ignored by git)
 │
 ├── .gitignore              # Specifies files for git to ignore
 ├── dashboard.py            # The Streamlit dashboard application
 ├── requirements.txt        # Project dependencies for pip
 └── README.md               # Project documentation
 
+Credits
+This project was created and developed by Sagar Chhetri.
 
 🤝 Contributing
 
