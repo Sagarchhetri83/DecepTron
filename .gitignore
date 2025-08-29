@@ -1,0 +1,26 @@
+# Python virtual environment
+.venv/
+
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Database files
+*.db
+*.db-journal
+
+# Log files
+logs/
+*.log
+*.txt
+
+# AI Models (important to ignore the large files)
+models/*
+!models/.gitkeep
+
+# VS Code settings
+.vscode/
+
+# IDE files
+.idea/
