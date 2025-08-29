@@ -78,20 +78,27 @@ PuTTY → SSH honeypot on port 2222
 All activity is logged into SQLite and visualized on the dashboard.
 
 📂 Project Structure
+
 DecepTron/
+│   dashboard.py
+│   README.md
+│   requirements.txt
+│   cspell.json
+│   .gitignore
 │
-├── backend/                # Core honeypot logic
-│   ├── app.py              # Main terminal honeypot
-│   ├── offensive_ai.py     # LLM interaction engine
-│   ├── logger.py           # Logging functions
-│   ├── defensive.py        # Threat detection
-│   └── ftp_honeypot.py     # FTP honeypot
+├───data
+│       sample.csv
+│       ...
 │
-├── data/                   # SQLite DB (ignored by git)
-├── models/                 # LLM files (ignored by git)
-├── dashboard.py            # Streamlit dashboard
-├── requirements.txt        # Dependencies
-└── README.md               # Documentation
+├───models
+│       model.pkl
+│       ...
+│
+└───utils
+        helper.py
+        logger.py
+        ...
+
 
 👨‍💻 Credits
 
