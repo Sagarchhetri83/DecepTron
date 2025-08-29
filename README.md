@@ -1,10 +1,14 @@
-🍯 DecepTron – AI-Powered Deception Honeypot
-
+#  DecepTron – AI-Powered Deception Honeypot
 
 DecepTron is an intelligent AI-powered cybersecurity honeypot that uses a local Large Language Model (LLM) to simulate vulnerable network services. It is designed to attract, deceive, and analyze attackers in real time, providing valuable threat intelligence while running fully offline for maximum privacy.
 
+---
 
-🚀 Features
+
+
+
+
+#  🧑‍💻Features
 
 AI-Powered Interaction → Uses a local Llama-3 model to generate realistic attacker responses.
 
@@ -16,8 +20,11 @@ Live Analytics Dashboard → Streamlit web UI for real-time monitoring.
 
 Fully Local & Private → Runs without any external APIs or cloud services.
 
+----
 
-🛠️ Tech Stack
+
+
+# 🛠️ Tech Stack
 
 Backend → Python 3, Sockets, Threading
 
@@ -30,81 +37,68 @@ Dashboard → Streamlit + Pandas
 
 Attacker Clients → PuTTY (SSH/terminal)
 
+---
 
 
-📦 Installation
-1️⃣ Clone the repository
+
+# 📦 Installation
+
+### 1️. Clone the repository
 git clone https://github.com/Sagarchhetri83/DecepTron-AI-Honeypot.git
 cd DecepTron-AI-Honeypot
 
-2️⃣ Create & activate virtual environment
-# Create venv
+### 2️. Create & activate virtual environment
+-Create venv
 python -m venv .venv  
 
-# Activate on Windows
+-Activate on Windows
 .\.venv\Scripts\activate
 
-3️⃣ Install dependencies
-pip install -r requirements.txt
+### 3️. Install dependencies
+-pip install -r requirements.txt
 
-4️⃣ Download the AI Model
+### 4️. Download the AI Model
 
-Download Meta-Llama-3-8B-Instruct.Q4_K_M.gguf and place it in the /models directory.
-Update the MODEL_PATH variable in backend/offensive_ai.py to point to this file.
+-Download Meta-Llama-3-8B-Instruct.Q4_K_M.gguf and place it in the /models directory.
 
-▶️ Usage
+-Update the MODEL_PATH variable in backend/offensive_ai.py to point to this file.
 
-Run the system in multiple terminals:
+---
 
-Terminal 1 – Dashboard
+# ▶️ Usage
+
+### -Run the system in multiple terminals:
+
+-Terminal 1 – Dashboard
 
 streamlit run dashboard.py
 
 
-Terminal 2 – Main Honeypot
+-Terminal 2 – Main Honeypot
 
 python -m backend.app
 
-
-Terminal 3 – FTP Honeypot (optional)
-
-python -m backend.ftp_honeypot
+---
 
 
-🔗 Connect with:
 
-PuTTY → SSH honeypot on port 2222
+
+# 🔗 Connect with:
+
+### PuTTY → SSH honeypot on port 2222
 
 All activity is logged into SQLite and visualized on the dashboard.
 
-📂 Project Structure
-
-DecepTron/
-│   dashboard.py
-│   README.md
-│   requirements.txt
-│   cspell.json
-│   .gitignore
-│
-├───data
-│       sample.csv
-│       ...
-│
-├───models
-│       model.pkl
-│       ...
-│
-└───utils
-        helper.py
-        logger.py
-        ...
+---
 
 
-👨‍💻 Credits
+
+
+# 👨‍💻 Credits
 
 Developed by Sagar Chhetri 
 A hands-on project exploring offensive AI, deception, and cybersecurity research.
 
-🤝 Contributing
+# 🤝 Contributing
 
 Pull requests are welcome. For major changes, open an issue first to discuss what you’d like to change.
